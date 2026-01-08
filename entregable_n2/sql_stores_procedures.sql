@@ -31,5 +31,23 @@ SELECT * FROM clientes
 WHERE id_cliente = 1;
 
 
+-- para registrar un pago de memebresía y que active automáticamente al cliente
+DELIMITER //
+CREATE procedure registrar_pago_membresia (
+	IN pr_id_cliente INT,
+    IN pr_id_membresia INT,
+    IN pr_metodo_pago VARCHAR(100)
+)
+BEGIN
+	INSERT INTO pagos (id_cliente, id_membresia, fecha_pago, metodo_pago)
+    VALUES (pr_id_cliente, pr_id_membresia, curdate(), pr_metodo_pago);
+END //
+DELIMITER //;
+
+CALL registrar_pago_membresia(3, 2, 'Tarjeta');
+
+
+
+
 
 
