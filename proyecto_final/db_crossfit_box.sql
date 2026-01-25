@@ -38,8 +38,9 @@ fecha DATE NOT NULL,
 hora TIME NOT NULL,
 cupo_maximo INT NOT NULL,
 FOREIGN KEY (id_entrenador) REFERENCES entrenadores(id_entrenador),
-foreign key (id_wod) references wods_detalle(id_wod)
+foreign key (id_wod) references wods(id_wod)
 );
+
 
 CREATE TABLE inscripciones (
 id_inscripcion INT auto_increment PRIMARY KEY,
