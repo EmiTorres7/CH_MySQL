@@ -43,7 +43,7 @@ INSERT INTO reservas(id_cliente, id_clase, fecha_reserva, horario)
 VALUES (1,1,curdate(), '08:00:00');    
 
 -- Registrar un pago y verificar estado
-INSERT INTO pagos (id_cliente, id_membresia, fecha_pago, metodo_pago)
+INSERT INTO pagos (id_cliente, id_plan, fecha_pago, metodo_pago)
 VALUES (3, 1, CURDATE(), 'Tarjeta');
 
 SELECT estado FROM clientes WHERE id_cliente = 3;
